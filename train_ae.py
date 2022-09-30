@@ -72,3 +72,4 @@ if __name__ == '__main__':
     trainer = train_utils(args, save_dir)
     trainer.setup()
     trainer.train()
+

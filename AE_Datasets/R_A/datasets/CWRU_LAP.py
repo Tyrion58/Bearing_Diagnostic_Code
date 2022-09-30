@@ -159,6 +159,11 @@ class CWRU_LAP(object):
         D = np.diag(d)
         # 得到拉普拉斯矩阵
         L = D - W
+        # 对拉普拉斯矩阵做归一化
+        d_ = d ** -0.5
+        D_ = np.diag(d_)
+        L = np.dot(D_, L)
+        L = np.dot(L, D_)
         temp = np.dot(train_data.T, L)
         result = np.mat(np.dot(temp, train_data))
         print(result)
